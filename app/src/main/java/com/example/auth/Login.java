@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity{
     public static final String AES = "AES";
     private static final String TAG = "EncryptionPassword";
     String encryp_password;
-    //https://www.youtube.com/watch?v=QwQuro7ekvc = Java Tutorial - Complete User Login and Registration Backend + Email Verification
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +89,6 @@ public class Login extends AppCompatActivity{
                         e.printStackTrace();
                     }
                     password = encryp_password;
-                    //System.out.println(password);
 
                     if( !email.equals("") && !password.equals("")) {
                         progressBar.setVisibility(View.VISIBLE);
@@ -103,8 +102,8 @@ public class Login extends AppCompatActivity{
                                 String[] data = new String[2];
                                 data[0] = email;
                                 data[1] = password;
-//                                PutData putData = new PutData(ROOT_URL+"login.php", "POST", field, data);
-                                PutData putData = new PutData("https://kunals-resume.000webhostapp.com/PHP_auth/login.php", "POST", field, data);
+
+                                PutData putData = new PutData("YOUR API LINK", "POST", field, data);
                                 if (putData.startPut()) {
                                     if (putData.onComplete()) {
                                         progressBar.setVisibility(View.GONE);

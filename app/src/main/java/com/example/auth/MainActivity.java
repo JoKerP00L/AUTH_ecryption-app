@@ -20,8 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity{
 
     TextView Login, SignUP;
-
-    @SuppressLint("MissingInflatedId")
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

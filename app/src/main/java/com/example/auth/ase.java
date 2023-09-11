@@ -57,7 +57,6 @@ public class ase extends AppCompatActivity {
 
     public String encryptAndStorePassword(String password) {
         SharedPreferences.Editor editor = getSharedPreferences("pswd", MODE_PRIVATE).edit();
-        //password = String.valueOf(textInputEditTextPassword.getText());
         String encryptedPassword = "";
         if (password!=null && !password.isEmpty()) {
             SecretKey secretKey = null;

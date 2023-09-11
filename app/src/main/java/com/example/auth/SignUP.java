@@ -46,11 +46,7 @@ public class SignUP extends AppCompatActivity{
         textViewLogin = findViewById(R.id.loginText);
         progressBar = findViewById(R.id.progress);
 
-        /*String password = String.valueOf(textInputEditTextUsername.getText());
-        Log.e(TAG, "password => " + password);
-        final String encryptedPassword = StorePassword(password);
-        Log.e(TAG, "encryptedPassword => " + encryptedPassword);*/
-
+    
         textViewLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -94,7 +90,7 @@ public class SignUP extends AppCompatActivity{
                             data[2] = password;
                             data[3] = email;
 //                            PutData putData = new PutData( ROOT_URL+"signup.php" , "POST", field, data);
-                            PutData putData = new PutData( "https://kunals-resume.000webhostapp.com/PHP_auth/signup.php" , "POST", field, data);
+                            PutData putData = new PutData( "YOUR API LINK" , "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
@@ -124,31 +120,6 @@ public class SignUP extends AppCompatActivity{
             }
         });
     }
-
-
-    /*public String StorePassword(String password) {
-        SharedPreferences.Editor editor = getSharedPreferences("pswd", MODE_PRIVATE).edit();
-        //password = String.valueOf(textInputEditTextPassword.getText());
-        String Data = textInputEditTextUsername.getText().toString();
-        String encryptedPassword = "";
-        if (password!=null && !password.isEmpty()) {
-            SecretKey secretKey = null;
-            try {
-                //secretKey = getSecretKey(password, generateSalt());
-                //SecretKeySpec key = generateKey(password);
-                //byte[] encoded = secretKey.getEncoded();
-                //String input = byteArrayToHexString(encoded);
-                //editor.putString("S_KEY", input);
-                encryptedPassword = encrypt( Data, password);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            editor.putString("token", encryptedPassword);
-            editor.commit();
-        }
-        return encryptedPassword;
-    }*/
-
 
     private String encrypt(String Data, String password) throws Exception{
         SecretKeySpec key = generateKey(password);
